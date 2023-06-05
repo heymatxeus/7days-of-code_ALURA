@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>Day 3</title>
+        <meta charset="UTF-8">
+    </head>
+
+    <body>
+        
+        <script>
+            let escolhaStack = prompt("Olá usuário, qual seria a área de sua especialização? DIGITE '1' para FRONT-END e '2' para BACK-END");
+
+            if(escolhaStack == "1"){
+                alert("Você escolheu FRONT-END, que legal!!");
+                let escolhaEspecializacao = prompt("Certo, agora me informe qual tecnologia dentro do Front gostaria de seguir. '1' para REACT e '2' para VUE.");
+
+                if(escolhaEspecializacao == "1"){
+                    alert("Você escolheu REACT, vamos apartir dela então.")
+                }
+                if(escolhaEspecializacao == "2"){
+                    alert("Você escolheu VUE, vamos apartir dela então.")
+                }
+                escolhaStack = "FRONT-END";
+            }
+
+            else if(escolhaStack == "2"){
+                alert("Você escolheu BACK-END, que legal!!");
+                escolhaEspecializacao = prompt("Certo, agora me informe qual tecnologia dentro do Back gostaria de seguir. '1' para C# e '2' para JAVA.");
+
+                if(escolhaEspecializacao == "1"){
+                    alert("Você escolheu C#, vamos apartir dela então.")
+                    escolhaEspecializacao = "C#";
+                }
+                if(escolhaEspecializacao == "2"){
+                    alert("Você escolheu JAVA, vamos apartir dela então.")
+                    escolhaEspecializacao = "JAVA";
+                }
+                escolhaStack = "BACK-END";
+            }
+
+            let seEspecializarOuFullstack = prompt("Ok, após essa tecnologia, você gostaria de se especializar mais nela, ou aprender outras para se tornar um Fullstack? '1' Para se especializar, '2' para se tornar Fullstack");
+
+            if(seEspecializarOuFullstack == "1"){
+                seEspecializarOuFullstack = "Entendi, então você vai se especializar.";
+                alert(seEspecializarOuFullstack);
+            }
+            else if(seEspecializarOuFullstack == "2"){
+                seEspecializarOuFullstack = "Entende, então você vai se tornar Fullstack.";
+                alert(seEspecializarOuFullstack);
+            }
+            let adicionarNovasTecnologias = confirm("E por fim, gostaria de adicionar novas tecnologias que tem interesse em se especializar, ou conhecer? Pressione 'OK' para adicionar e 'Cancelar' para não adicionar.");
+            let listaDeTecnologias = [];
+
+            while(adicionarNovasTecnologias){
+                let novaTecnologia = prompt("Informe o nome da Tecnologia: ")
+                listaDeTecnologias.push(novaTecnologia);
+
+                adicionarNovasTecnologias = confirm("Gostaria de adicionar outra tecnologia? Pressione 'OK' para adicionar e 'Cancelar' para não adicionar.");
+            }
+            if(listaDeTecnologias.length == 0){alert("***** FIM DO PROGRAMA *****")}
+            else{
+                alert("Essa é a lista de tecnologias: " + listaDeTecnologias);
+                alert("***** FIM DO PROGRAMA *****")
+            }
+        </script>
+    </body>
+</html>
