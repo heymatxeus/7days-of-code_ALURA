@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Day 4</title>
+        <meta charset="UTF-8">
+    </head>
+
+    <body>
+        
+        <script>
+            const numeroAleatorio = parseInt(Math.random() * 10) + 1;
+            let numeroDeTentativas = 3;
+
+            while(numeroDeTentativas !== 0){
+                alert("Você ainda tem: " + numeroDeTentativas + " tentativas.");
+                let escolhaUsuario = parseInt(prompt("Informe um número para chutar: "));
+                if(escolhaUsuario == numeroAleatorio){
+                    alert("Parabéns, você acertou o número!");
+                    break;
+                }
+                else{
+                    numeroDeTentativas--;
+                }
+            }
+
+            if(numeroDeTentativas === 0){
+                alert("Que pena, você não conseguiu, O número era: " + numeroAleatorio + ".");
+            }
+            
+        </script>
+    </body>
+</html>
