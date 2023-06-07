@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Day 5</title>
+        <meta charset="UTF-8">
+    </head>
+
+    <body>
+        
+        <script>
+            alert("Okay, vamos criar sua lista de compras agora!");
+            let continuarComprando = true;
+            let resposta = "";
+            let listaDeFrutas = [];
+            let listaDeBesteiras = [];
+            let listaDeCongelados = [];
+
+            while(continuarComprando){
+                let resposta = prompt("Deseja adicionar algum item na lista de compras? 'S' para SIM e 'N' para NÃO.").toUpperCase();
+
+                if(resposta !== "S" && resposta !== "N"){
+                    alert("Por favor, escolha uma das duas opções");
+                    continue;
+                }
+
+                if(resposta == "N"){
+                    continuarComprando = false;
+                }else if(resposta == "S"){
+                    let comidaEscolhida = prompt("Okay, qual comida gostaria de inserir?").toLowerCase();
+                    let categoriaDeComida = prompt("Informação salva! Em que categoria ela se encaixa? 'F' para FRUTAS, 'B' para BESTEIRAS e 'C' para CONGELADOS.").toUpperCase();
+
+                    if(categoriaDeComida == "F"){listaDeFrutas.push(comidaEscolhida)}
+                    if(categoriaDeComida == "B"){listaDeBesteiras.push(comidaEscolhida)}
+                    if(categoriaDeComida == "C"){listaDeCongelados.push(comidaEscolhida)}
+
+                }
+            }
+            alert("Lista de Frutas: " + listaDeFrutas)
+            alert("Lista de Besteiras: " + listaDeBesteiras)
+            alert("Lista de Congelados: " + listaDeCongelados);
+
+            alert("*****FIM DO PROGRAMA*****")
+        </script>
+    </body>
+</html>
