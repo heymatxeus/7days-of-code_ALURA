@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <title>Day 6</title>
+        <meta charset="UTF-8">
+    </head>
+
+    <body>
+        
+        <script>
+            alert("Okay, vamos criar sua lista de compras agora!");
+            let continuarComprando = true;
+            let resposta = "";
+            let listaDeFrutas = [];
+            let listaDeBesteiras = [];
+            let listaDeCongelados = [];
+
+            while(continuarComprando){
+                let resposta = prompt("Deseja adicionar ou remover algum item da sua lista de compras? 'S' para SIM, 'N' para NÃO e 'R' para REMOVER.").toUpperCase();
+
+                if(resposta !== "S" && resposta !== "N" && resposta !== "R"){
+                    alert("Por favor, escolha uma das duas opções");
+                    continue;
+                }
+
+                if(resposta == "N"){
+                    continuarComprando = false;
+
+                }else if(resposta == "S"){
+                    let comidaEscolhida = prompt("Okay, qual comida gostaria de inserir?").toLowerCase();
+                    let categoriaDeComida = prompt("Informação salva! Em que setor ela se encaixa? 'F' para FRUTAS, 'B' para BESTEIRAS e 'C' para CONGELADOS.").toUpperCase();
+
+                    if(categoriaDeComida == "F"){listaDeFrutas.push(comidaEscolhida)}
+                    if(categoriaDeComida == "B"){listaDeBesteiras.push(comidaEscolhida)}
+                    if(categoriaDeComida == "C"){listaDeCongelados.push(comidaEscolhida)}
+
+                }else if(resposta == "R"){
+                    
+                    alert(`Essa é sua lista atual:\nFrutas: ${listaDeFrutas}\nBesteiras: ${listaDeBesteiras}\nCongelados: ${listaDeCongelados}`);
+
+                    let deletarItem = prompt("Qual item gostaria de deletar?").toLowerCase();
+                    let qualSetor = prompt("Qual setor esse item está?'F' para FRUTAS, 'B' para BESTEIRAS e 'C' para CONGELADOS.").toUpperCase();
+
+                    if(qualSetor == "F"){
+                        if(listaDeFrutas.length == 0){alert("Lista vazia impossível deletar itens"); continue;}
+                        let temItem = listaDeFrutas.indexOf(deletarItem);
+                        if(temItem !== -1){
+                            listaDeFrutas.splice(temItem, 1);
+                            alert("Item removido com sucesso!");
+                        }else{
+                            alert("Item não encontrado na lista de frutas");
+                        }
+
+
+                    }else if(qualSetor == "B"){
+                        if(listaDeBesteiras.length == 0){alert("Lista vazia impossível deletar itens"); continue;}
+                        let temItem = listaDeBesteiras.indexOf(deletarItem);
+                        if(temItem !== -1){
+                            listaDeBesteiras.splice(temItem, 1);
+                            alert("Item removido com sucesso!");
+                        }else{
+                            alert("Item não encontrado na lista de besteiras");
+                        }
+
+
+                    }else if(qualSetor == "C"){
+                        if(listaDeCongelados.length == 0){alert("Lista vazia impossível deletar itens"); continue;}
+                        let temItem = listaDeCongelados.indexOf(deletarItem);
+                        if(temItem !== -1){
+                            listaDeCongelados.splice(temItem, 1);
+                            alert("Item removido com sucesso!");
+                        }else{
+                            alert("Item não encontrado na lista de congelados");
+                        }
+
+                    }else{
+                        alert("Setor não encontrado. Não foi possível excluir item da lista de compra.");
+                        continuarComprando = false;
+                    }
+                }
+            }
+            alert("Lista de compras finalizada!!")
+            alert(`Essa é sua lista:\nFrutas: ${listaDeFrutas}\nBesteiras: ${listaDeBesteiras}\nCongelados: ${listaDeCongelados}`);
+            
+        </script>
+    </body>
+</html>
