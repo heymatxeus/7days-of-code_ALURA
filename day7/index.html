@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Day 7</title>
+        <meta charset="UTF-8">
+    </head>
+
+    <body>
+        
+        <script>
+            function calcular(){
+                let operacaoInvalida = false;
+                let resposta = 0;
+                while(!operacaoInvalida){
+                    let operacao = prompt("Informe, qual operação gostaria de realizar? '+' para Soma\n'-' para SUBTRAÇÃO\n'*' para MULTIPLICAÇÃO\nE, '/' para DIVISÃO. Caso queira sair, digite 's'").toUpperCase();
+
+                    if(operacao == "S"){
+                        operacaoInvalida = true;
+                        continue;
+                    }
+                    
+                    if(operacao !== "+" && operacao !== "-" && operacao !== "*" && operacao !== "/"){
+                        alert("Operação Inválida!!");
+                        continue;
+                    }
+
+                    alert("CASO AS INFORMAÇÕES A SEGUIR NÃO SEJAM NÚMEROS, O VALOR CONSIDERADO SERÁ ZERO (0)");
+                    let n1 = parseInt(prompt("Informe o primeiro número: "))
+                    let n2 = parseInt(prompt("Informe o segundo número: "));
+
+                    if(isNaN(n1)){n1 = 0;}
+                    if(isNaN(n2)){n2 = 0;}
+                    
+
+                    switch(operacao){
+
+                        case "+":
+                            function somar(n1, n2){
+                                return resposta = n1 + n2;
+                            }
+                            somar(n1, n2);
+                            break;
+
+                        case "-":
+                            function subtrair(n1, n2){
+                                return resposta = n1 - n2;
+                            }
+                            subtrair(n1, n2);
+                            break;
+
+                        case "*":
+                            function multiplicar(n1, n2){
+                                return resposta = n1 * n2;
+                            }
+                            multiplicar(n1, n2);
+                            break;
+
+                        case "/":
+                            function dividir(n1, n2){
+                                return resposta = n1 / n2;
+                            }
+                            dividir(n1, n2);
+                            break;
+                        }
+                    alert(`O resultado do seu cálculo foi: ${resposta}.`);
+                }
+            }
+            calcular();
+            alert("FIM DO PROGRAMA");
+        </script>
+    </body>
+</html>
